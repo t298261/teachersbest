@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'base.html' %}
+
+
+
+
+
+
+<section class="vh-100" style="background-color: #fff;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-25">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <h3 class="mb-5">Choose an Account Type</h3>
+  
+                 
+              <a class="btn btn-primary btn-lg btn-block" href="{% url 'studentsignup' %}">Student Account</a>
+
+              <a class="btn btn-primary btn-lg btn-block" href="{% url 'teachersignup' %}">Teacher Account</a>
+
+              <a class="btn btn-primary btn-lg btn-block" href="{% url 'adminlogin' %}">Admin Account</a>
+  
+
+
+              <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                <div class="border-bottom w-100 ml-5"></div>
+                <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                <div class="border-bottom w-100 mr-5"></div>
+            </div>
+              Already have an account? Sign in.
+  
+              <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
+                type="submit"><i class="fab fa-google me-2"></i> Sign in with Google</button>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

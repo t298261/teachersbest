@@ -1,0 +1,49 @@
+{% extends 'student/studentbase.html' %}
+
+{%load static%}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+        What three things support this claim? Have this in your own words, don't be too specific, just generally state the support in each box. Do not use quotes. 
+
+        Your Claim: 
+
+        {% for x in bobblypop %}
+        {{ x.declarative }}
+        {% endfor %}
+    
+        </br>
+
+        <br>
+       <form method='post'>
+        {% csrf_token %}
+
+           First support:  <textarea type="text" name="support_one" maxlength="100" required id="id_support_one"></textarea>
+
+        Second Support: <textarea type="text" name="support_two" maxlength="100" required id="id_support_two"></textarea>
+
+           Third Support:  <textarea type="text" name="support_three" maxlength="100" required id="id_support_three"></textarea>
+
+
+            <button type="submit">Submit</button>
+       </form>
+
+    </br>
+
+    
+</body>
+</html>
+
+{% endblock %}

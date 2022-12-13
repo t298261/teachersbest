@@ -1,0 +1,64 @@
+
+
+{% extends 'student/studentbase.html' %}
+
+{%load static%}
+
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <br>
+         Answer the essay question without using the first person pronouns "I" or "Me". 
+</br>
+<br>
+          {% for x in ques %}
+          {{  x.question }}
+          {% endfor %}
+        </br>
+       
+        <br>
+
+        {% for x in completed_form_claim %}
+       <form method='post'>
+        {% csrf_token %}
+
+            Answer Here:
+            
+            <textarea type="text" name="declarative" maxlength="100" required id="id_declarative" placeholder="{{x.declarative}}"></textarea>
+
+            because <textarea type="text" name="support_one" maxlength="100" required id="id_support_one" placeholder="{{x.support_one}}"></textarea>, 
+
+            <textarea type="text" name="support_two" maxlength="100" required id="id_support_two" placeholder="{{x.support_two}}"></textarea> and 
+
+            <textarea type="text" name="support_three" maxlength="100" required id="id_support_three" placeholder="{{x.support_three}}"></textarea>
+
+            <button type="submit">Submit</button>
+       </form>
+       {% endfor %}
+
+    </br>
+
+    *Click next if you already did this step; you can't submit this twice.
+    <a class="btn btn-primary" href="{% url 'to-essay-question' %}" role="button">Back</a>
+    <a class="btn btn-primary" href="{% url 'to-tiqa-one' %}" role="button">Next</a>
+
+
+    
+</body>
+</html>
+
+{% endblock %}

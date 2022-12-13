@@ -1,0 +1,158 @@
+
+{% include 'base.html' %}
+
+
+{% comment %} OLD BASIC QUESTIONS
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+         What question do you have to answer for your paper?
+    
+        </br>
+
+        <br>
+       <form method='post'>
+        {% csrf_token %}
+            Question Here: <textarea type="text" name="question" maxlength="100" required id="id_question"></textarea>
+            <button type="submit">Submit</button>
+       </form>
+
+    </br>
+
+    
+</body>
+</html> {% endcomment %}
+
+
+{% block content %}
+<style>
+    body{background-color: #eee}.form-control:focus{color: #495057;background-color: #fff;border-color: #80bdff;outline: 0;box-shadow: 0 0 0 0rem rgba(0,123,255,.25)}.btn-secondary:focus{box-shadow: 0 0 0 0rem rgba(108,117,125,.5)}.close:focus{box-shadow: 0 0 0 0rem rgba(108,117,125,.5)}.mt-200{margin-top:200px}
+
+</style>
+
+<link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard.min.css" rel="stylesheet" type="text/css" /> 
+<link href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/smart_wizard_theme_dots.min.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.smartWizard.min.js"></script> <div class="container"> 
+   
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document"> 
+            <div class="modal-content">
+                 <div class="modal-header"> 
+                    <h5 class="modal-title" id="exampleModalLabel">Rough Draft Creator</h5> 
+                    
+                         <span aria-hidden="true"></span> 
+                        </div> 
+                         <div class="modal-body"> 
+                            <div id="smartwizard"> 
+                                <ul> 
+                                    <li><a href="#step-1">Step 1<br /><small>Thesis Statement</small></a></li> 
+                                    <li><a href="#step-2">Step 2<br /><small>Body Paragraph 1</small></a></li> 
+                                    <li><a href="#step-3">Step 3<br /><small>Body Paragraph 2</small></a></li> 
+                                    <li><a href="#step-4">Step 4<br /><small>Body Paragraph 3</small></a>
+                                    </li> 
+                                </ul> 
+                                <div> 
+
+                                    What question do you have to answer for your paper?
+                                    
+                                    <div id="step-1"> 
+                                        <div class="row"> 
+
+                                            <div class="col-md-6"> 
+                                                <input type="text" class="form-control" placeholder="Name" required>
+                                             </div> 
+
+                                                </div> 
+                                            </div> 
+
+
+
+
+
+                                            <div id="step-2"> 
+                                                <div class="row"> 
+                                                    <div class="col-md-6"> 
+                                                        <input type="text" class="form-control" placeholder="Address" required> </div> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="City" required> 
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="row mt-3"> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="State" required> 
+                                                        </div> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="Country" required> 
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+
+
+
+
+                                                <div id="step-3" class=""> 
+                                                    <div class="row"> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="Card Number" required> 
+                                                        </div> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="Card Holder Name" required> 
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="row mt-3">
+                                                         <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="CVV" required> 
+                                                        </div> 
+                                                        <div class="col-md-6"> 
+                                                            <input type="text" class="form-control" placeholder="Mobile Number" required> 
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+
+
+
+                                                
+                                                <div id="step-4" class="">
+                                                     <div class="row">
+                                                        <div class="col-md-12">
+                                                             <span>Thanks For submitting your details with BBBootstrap.com. we will send you a confirmation email. We will review your details and revert back.</span>
+                                                            </div> 
+                                                        </div> 
+                                                    </div>
+                                                 </div> 
+                                                </div> 
+                                            </div> 
+                                        </div> 
+                                    </div> 
+                                </div>
+                             </div>
+
+
+
+
+<script>
+
+
+    $(document).ready(function(){
+
+        $('#smartwizard').smartWizard({
+                selected: 0,
+                theme: 'dots',
+                autoAdjustHeight:true,
+                transitionEffect:'fade',
+                showStepURLhash: false,
+             
+        });
+
+    });
+
+</script>
+
+{% endblock %}

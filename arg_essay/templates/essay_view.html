@@ -1,0 +1,75 @@
+{% extends 'student/studentbase.html' %}
+
+{%load static%}
+
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+       {% for x in  complete_thesis  %}
+       {{  x.declarative}}
+       {{  x.support_one }}
+       {{  x.support_two }}
+       {{  x.support_three }}
+       {% endfor %}
+
+    <br></br>
+       {% for x in tiqa_one  %}
+       {{  x.topic_sentence_one}}
+       {{  x.intro_quote_one }}
+       {{  x.quote_one  }}
+       {{  x.analysis_one_one }}
+       {{  x.analysis_one_two  }}
+       {% endfor %}
+       <br></br>
+
+
+       {% for x in tiqa_two   %}
+       {{  x.topic_sentence_two}}
+       {{  x.intro_quote_two }}
+       {{  x.quote_two }}
+       {{  x.analysis_two_one }}
+       {{  x.analysis_two_two  }}
+       {% endfor %}
+       <br></br>
+
+
+       {% for x in tiqa_three %}
+       {{  x.topic_sentence_three}}
+       {{  x.intro_quote_three }}
+       {{ x.quote_three }}
+       {{  x.analysis_three_one  }}
+       {{  x.analysis_three_two }}
+       {% endfor %}
+
+
+       If complete with rough draft, copy and paste the above into a Google Doc and continue writin and revising your essay.
+
+       If not, go back to one of the step using the buttons below:
+       <br></br>
+
+       <a class="btn btn-primary" href="{% url 'to-essay-question' %}" role="button">Essay Question</a>
+       <a class="btn btn-primary" href="{% url 'to-claim' %}" role="button">Claim</a>
+       <a class="btn btn-primary" href="{% url 'to-tiqa-one' %}" role="button">Body paragraph One</a>
+       <a class="btn btn-primary" href="{% url 'to-tiqa-two' %}" role="button">Body paragraph Two</a>
+       <a class="btn btn-primary" href="{% url 'to-tiqa-three' %}" role="button">Body paragraph Three</a>
+
+
+
+
+
+
+
+
+    </body>
+    </html> {% endblock %}

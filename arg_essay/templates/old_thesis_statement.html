@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+       This is your thesis statement, do you like it or do you want to edit it?
+       <br></br>
+       Your Thesis statement: 
+       <br></br>
+
+       {% for y in statement %}  {% for x in supps %}
+
+         {{ y.declarative }} because {{ x.support_one }}, {{ x.support_two }} and {{ x.support_three }}.
+
+        {% endfor %}
+        {% endfor %}
+
+
+</body>
+</html>

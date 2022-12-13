@@ -1,0 +1,58 @@
+
+
+
+{% extends 'student/studentbase.html' %}
+
+{%load static%}
+
+
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+
+    <table>
+
+        <td style="padding-left:100px">
+        Complete Body paragraph two below.
+        This paragraph should only be about:
+        <br></br>
+        {% for x in supp_all %}
+        {{  x.declarative }} because <b>{{  x.support_two }}</b>
+        {% endfor %}
+
+        <br></br>
+    
+       <form method='post'>
+        {% csrf_token %}
+            Topic sentence: <textarea type="text" name="topic_sentence_two" maxlength="100" required id="id_topic_sentence_two"></textarea>
+            <br></br>
+            Intro to Quote: <textarea type="text" name="intro_quote_two" maxlength="100" required id="id_intro_quote_two"></textarea>
+            <br></br>
+            Quote: <textarea type="text" name="quote_two" maxlength="100" required id="id_quote_two"></textarea>
+            <br></br>
+            Analysis: <textarea type="text" name="analysis_two_one" maxlength="100" required id="id_analysis_two_one"></textarea>
+            <br></br>
+            Analysis: <textarea type="text" name="analysis_two_two" maxlength="100" required id="id_analysis_two_two"></textarea>
+            <button type="submit">Submit</button>
+       </form>
+    </td>
+
+    </table>
+
+    <a class="btn btn-primary" href="{% url 'to-tiqa-one' %}" role="button">Back</a>
+    <a class="btn btn-primary" href="{% url 'to-tiqa-three' %}" role="button">Next</a>
+
+
+
+</body>
+</html> {% endblock %}

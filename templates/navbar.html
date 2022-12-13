@@ -1,0 +1,64 @@
+
+{% load static %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'site-home' %}">Teacher's Best</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'site-home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a href="{% url 'create-account' %}" class="nav-link">Create Account</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+
+
+      {% if request.user.is_authenticated %}
+      <div class="nav-link" >
+          <a  href="{% url 'student-dashboard' %}" >{{user}}'s Profile</a>
+      </div>
+      {% else %}
+      {% endif %}
+
+      
+      {% if request.user.is_authenticated %}
+      <div class="form-inline my-2 my-lg-0" >
+        <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}" >Logout</a>
+      </div>
+      {% else %}
+      <div class="form-inline my-2 my-lg-0" >
+        <a  class="btn btn-outline-success my-2 my-sm-2" href="{% url 'login' %}" class="jollyrancher ">Login</a>
+      </div>
+      {% endif %}
+
+  </div>
+</nav>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
+
+
